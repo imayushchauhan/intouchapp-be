@@ -14,7 +14,8 @@ and finally the dbmanager.py which handles connection and querying data from the
 
 6. I have created four APIs which are listed below:-
 
-    a.  URL: http://127.0.0.1:8000/api/save-user
+    a.  #save-user api is used to save the user detail
+        URL: http://127.0.0.1:8000/api/save-user
         REQUEST_TYPE: POST
         REQUEST:
         {
@@ -26,7 +27,8 @@ and finally the dbmanager.py which handles connection and querying data from the
         RESPONSEE:
         {"responseData": null, "message": "user added successfully", "code": 200}
 
-    b.  URL: http://127.0.0.1:8000/api/update-user
+    b.  #update-user api is used to update the user detail and update contacts of user
+        URL: http://127.0.0.1:8000/api/update-user
         REQUEST_TYPE: POST
         REQUEST:
         {
@@ -97,14 +99,16 @@ and finally the dbmanager.py which handles connection and querying data from the
         RESPONSEE:
         {"responseData": null, "message": "user updated successfully", "code": 200}
 
-    c.  URL: http://127.0.0.1:8000/api/get-user-list
+    c.  #get-user-list api is used to fetch all the user from the database
+        URL: http://127.0.0.1:8000/api/get-user-list
         REQUEST_TYPE: POST
         REQUEST:
         {}
         RESPONSEE:
         {"responseData": [{"_id": "13kzr3zfw378idv7aok69qg4", "firstName": "ayush", "lastName": "chauhan", "email": "imayushchauhan@gmail.com", "phoneNumber": 9968439442, "contactList": [{"c1": [{"type": "email", "value": "e1"}, {"type": "phone", "value": "p1"}]}, {"c2": [{"type": "email", "value": "e2"}, {"type": "phone", "value": "p2"}]}, {"c3": [{"type": "email", "value": "e3"}, {"type": "phone", "value": "p2"}]}, {"c4": [{"type": "email", "value": "e3"}, {"type": "phone", "value": "p4"}]}]}], "message": "user list fetched successfully", "code": 200}
 
-    d. URL: http://127.0.0.1:8000/api/get-potential-merge-candidates
+    d.  #get-potential-merge-candidates api is used to fetch potential merge candidates of the user
+        URL: http://127.0.0.1:8000/api/get-potential-merge-candidates
         REQUEST_TYPE: POST
         REQUEST:
         {
@@ -112,3 +116,5 @@ and finally the dbmanager.py which handles connection and querying data from the
         }
         RESPONSEE:
         {"responseData": [["c1"], ["c2", "c3", "c4", "c5"], ["c6", "c7", "c8"]], "message": "potential merge candidates fetched successfully", "code": 200}
+
+7. I have used pymongo pyhton package to interact with mongodb
